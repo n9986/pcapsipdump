@@ -12,10 +12,10 @@ pcapsipdump: pcapsipdump.cpp calltable.cpp calltable.h
 	  echo " apt-get install libpcap-dev"; \
 	  echo " cd ~ports/net/libpcap && make install"; \
 	  false)
-	$(CC) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(DEFS) pcapsipdump.cpp calltable.cpp -o pcapsipdump
+	$(CC) $(CPPFLAGS) $(LDFLAGS) $(DEFS) pcapsipdump.cpp calltable.cpp $(LIBS) -o pcapsipdump
 
 pcapsipdump-debug: pcapsipdump.cpp calltable.cpp calltable.h
-	$(CC) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(DEFS) -ggdb pcapsipdump.cpp calltable.cpp -o pcapsipdump-debug
+	$(CC) $(CPPFLAGS) $(LDFLAGS) $(DEFS) -ggdb pcapsipdump.cpp calltable.cpp $(LIBS) -o pcapsipdump-debug
 
 clean:
 	rm -f pcapsipdump
